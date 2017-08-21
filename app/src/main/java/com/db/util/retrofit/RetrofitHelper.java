@@ -24,6 +24,7 @@ public class RetrofitHelper {
 
     //公共域名
     public static final String BASE_URL = "http://api.douban.com/v2/movie/";
+    public static final String BASE_URL_WEATHER = "http://tj.nineton.cn/Heart/index/";
 
     private static final Interceptor REWRITE_CACHE_CONTROL_INTERCEPTO = chain -> {
 
@@ -61,6 +62,8 @@ public class RetrofitHelper {
 
     private static Retrofit retrofit = null;
 
+    private static Retrofit weather = null;
+
     public static Retrofit getRetrofitHelper() {
         if (retrofit == null) {
             try {
@@ -91,5 +94,37 @@ public class RetrofitHelper {
             }
         }
         return retrofit;
+    }
+
+    public static Retrofit getWeatherRetrofitHelper() {
+        if (weather == null) {
+            try {
+                synchronized (RetrofitHelper.class) {
+                    if (weather == null) {
+                        File httpCacheDirectory = new File(App.getContext().getCacheDir(), "mainCache");
+                        Cache cache = new Cache(httpCacheDirectory, 10 * 1024 * 1024);//缓存10MB
+                        OkHttpClient.Builder httpBuidler = new OkHttpClient().newBuilder();
+                        httpBuidler.cache(cache)
+                                .connectTimeout(10, TimeUnit.SECONDS)//连接超时限制5秒
+                                .writeTimeout(10, TimeUnit.SECONDS)
+                                .readTimeout(10, TimeUnit.SECONDS)
+                                //添加拦截器
+//                                .addNetworkInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTOR)//离线缓存
+                                .addInterceptor(REWRITE_CACHE_CONTROL_INTERCEPTO);
+
+                        weather = new Retrofit.Builder()
+                                .client(httpBuidler.build())
+                                .baseUrl(BASE_URL_WEATHER)
+                                .addConverterFactory(GsonConverterFactory.create())
+                                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                                .build();
+
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return weather;
     }
 }

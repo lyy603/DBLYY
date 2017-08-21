@@ -9,6 +9,7 @@ import com.chad.library.adapter.base.BaseViewHolder;
 import com.db.R;
 import com.db.movie_detail.mvp.model.bean.MovieDetailListBean;
 import com.db.movie_detail.ui.MovieDetailFragment;
+import com.db.movie_detail.ui.MovieReviewDetailFragment;
 import com.db.widget.rating_bar.MaterialRatingBar;
 
 import java.util.List;
@@ -105,7 +106,12 @@ public class MovieDetailListAdapter extends BaseMultiItemQuickAdapter<MovieDetai
                 ratingBar.setRating(item.getReviewsBean().getRating().getValue());
 
                 helper.getView(R.id.ll_footer_review).setOnClickListener(listener);
-
+                helper.getView(R.id.rl_review).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        fragment.start(MovieReviewDetailFragment.newInstance(item.getReviewsBean().getAlt()));
+                    }
+                });
                 break;
             default:
                 break;

@@ -14,6 +14,7 @@ import com.blankj.utilcode.util.ToastUtils;
 import com.db.R;
 import com.db.demo_normal.ui.DemoNormalFragment;
 import com.db.hot_show.ui.HotShowFragment;
+import com.db.weather.ui.WeatherListFragment;
 import com.db.widget.fragment.BaseFragment;
 
 import net.lucode.hackware.magicindicator.FragmentContainerHelper;
@@ -106,7 +107,7 @@ public class MainFragment extends BaseFragment {
         /***设置其他View***/
         //Fragment相关
         fragments[0] = HotShowFragment.newInstance();
-        fragments[1] = DemoNormalFragment.newInstance();
+        fragments[1] = WeatherListFragment.newInstance();
         fragments[2] = DemoNormalFragment.newInstance();
 
         loadMultipleRootFragment(R.id.layout_container, 0, fragments[0], fragments[1], fragments[2]);

@@ -145,9 +145,9 @@ public class MovieDetailFragment extends BaseFragment implements IMovieDetailLis
         recycler_view.addOnItemTouchListener(new SimpleClickListener() {
             @Override
             public void onItemClick(BaseQuickAdapter adapter, View view, int position) {
-                MovieDetailListBean bean = (MovieDetailListBean) adapter.getData().get(position);
-                if (bean.getReviewsBean() != null)
-                    start(MovieReviewDetailFragment.newInstance(bean.getReviewsBean().getAlt()));
+//                MovieDetailListBean bean = (MovieDetailListBean) adapter.getData().get(position);
+//                if (bean.getReviewsBean() != null)
+//                    start(MovieReviewDetailFragment.newInstance(bean.getReviewsBean().getAlt()));
             }
 
             @Override

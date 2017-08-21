@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_weather_item"
+    android:layout_width="100dp"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_date"
+        style="@style/WeatherTextView"
+        android:layout_marginTop="@dimen/margin_size_medium" />
+
+    <TextView
+        android:id="@+id/tv_date_2"
+        style="@style/WeatherTextView" />
+
+    <TextView
+        android:id="@+id/tv_weather_src_height"
+        style="@style/WeatherTextView" />
+
+    <ImageView
+        android:id="@+id/iv_weather_height"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/margin_size_small" />
+
+    <com.db.widget.CurveView
+        android:id="@+id/cv_weather"
+        android:layout_width="match_parent"
+        android:layout_height="90dp" />
+
+    <ImageView
+        android:id="@+id/iv_weather_low"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="@dimen/margin_size_small" />
+
+    <TextView
+        android:id="@+id/tv_weather_src_low"
+        style="@style/WeatherTextView"
+        android:layout_marginBottom="@dimen/margin_size_medium" />
+
+</LinearLayout>

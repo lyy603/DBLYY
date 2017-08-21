@@ -48,7 +48,7 @@ public class DemoListFragment extends BaseFragment implements SwipeRefreshLayout
     RelativeLayout layoutToolbar;
     @BindView(R.id.layout_refresh)
     SwipeRefreshLayout layout_refresh;
-    @BindView(R.id.recyclerview)
+    @BindView(R.id.recycler_view)
     RecyclerView recyclerView;
     private Context context;
     private DemoListPresenterImpl presenter;

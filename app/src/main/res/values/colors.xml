@@ -26,9 +26,14 @@
     <color name="color_text_green">#679D11</color>
     <color name="color_text_pink">#E47485</color>
 
+    <color name="line_chart_renderer_line_color">#aebdc5</color>
+
     <!--各种颜色-->
     <color name="transparent">#00000000</color>
     <color name="color_white">#ffffff</color>
+    <color name="color_white_2">#22ffffff</color>
+    <color name="color_white_3">#44ffffff</color>
+    <color name="color_white_4">#55ffffff</color>
     <color name="color_black_1">#000000</color>
     <color name="color_black_2">#1E2535</color>
     <color name="color_black_3">#0D121A</color>
@@ -37,5 +42,6 @@
     <color name="color_gray">#9B9B9B</color>
     <color name="color_gray_2">#F5F5F5</color>
     <color name="color_gray_3">#77e5e5e5</color>
+    <color name="color_gray_4">#ccE0E0E0</color>
     <color name="color_pink">#E47485</color>
 </resources>

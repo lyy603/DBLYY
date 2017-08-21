@@ -46,4 +46,17 @@ public interface API {
             @Query("city") String city
     );
 
+    //天气接口
+
+    @GET("future24h/")
+    Flowable<JsonObject> getDailyWeather(
+            @Query("city") String city,
+            @Query("language") String language,
+            @Query("key") String key
+    );
+
+    @GET("all/")
+    Flowable<JsonObject> getFutureWeather(
+            @Query("city") String city
+    );
 }
